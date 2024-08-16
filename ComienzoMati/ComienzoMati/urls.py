@@ -21,6 +21,7 @@ from AppJuridica import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ("", include('AppJuridica.urls')),
-    path ("vbc/", include ("vbc.urls"))
+    path ("vbc/", include ("vbc.urls")),
+    path("users/", include('users.urls')),  # Incluye las URLs de la aplicación `users`
 ]
 
