@@ -9,6 +9,7 @@ class ClienteFormulario(forms.Form):
     contraseña = forms.CharField(label="Contraseña", max_length=8)
     numero_de_caso = forms.IntegerField(label="Número de Caso")
 
+
 class YasoyclienteForm(forms.ModelForm):
     class Meta:
         model = Yasoycliente
@@ -33,3 +34,5 @@ class DatosdecontactoForm(forms.ModelForm):
 
 class BuscarNumeroCasoForm(forms.Form):
     numero_de_caso = forms.IntegerField(label='Número de Caso', widget=forms.NumberInput(attrs={'class': 'form-control'}))
+
+

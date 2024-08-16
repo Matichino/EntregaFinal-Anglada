@@ -20,6 +20,7 @@ from AppJuridica import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ("", include('AppJuridica.urls'))
+    path ("", include('AppJuridica.urls')),
+    path ("vbc/", include ("vbc.urls"))
 ]
 

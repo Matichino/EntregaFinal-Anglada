@@ -89,3 +89,4 @@ def buscar_numero_caso(request):
                 resultado = None
 
     return render(request, 'AppJuridica/buscar_numero_caso.html', {'form': form, 'resultado': resultado})
+

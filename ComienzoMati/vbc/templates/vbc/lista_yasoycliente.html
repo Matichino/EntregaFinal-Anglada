@@ -1,0 +1,15 @@
+{% extends "AppJuridica/base.html" %}
+
+{% load static %}
+
+{% block title %}Formulario de Cliente{% endblock title %}
+
+{% block main %}
+<h1 style="margin-bottom: 60px;">Formulario de Cliente</h1>   
+    {% for Yasoycliente in Yasoyclientes %}
+        <p>Nombre: {{ Yasoycliente.apellido }}, {{ Yasoycliente.nombre }}</p>
+
+        <a href="{% url 'YasoyclienteBorrar' Yasoycliente.pk %}">Borrar</a>
+        <a href="{% url 'ActualizaYasoycliente' Yasoycliente.pk %}">Actualizar</a>
+    {% endfor %}
+{% endblock main %}

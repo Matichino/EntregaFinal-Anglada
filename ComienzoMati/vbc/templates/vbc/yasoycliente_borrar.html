@@ -1,0 +1,18 @@
+{% extends "AppJuridica/base.html" %}
+
+{% load static %}
+
+{% block title %}Confirmar Eliminación{% endblock title %}
+
+{% block main %}
+    <h1 style="margin-bottom: 60px;">Confirmar Eliminación</h1>   
+    <!-- Mensaje de confirmación -->
+    <p>¿Estás seguro de que deseas eliminar al cliente "{{ object.nombre }} {{ object.apellido }}"?</p>
+    
+    <!-- Formulario para confirmar la eliminación -->
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+        <a href="{% url 'ListaYasoycliente' %}">Cancelar</a>
+    </form>
+{% endblock main %}

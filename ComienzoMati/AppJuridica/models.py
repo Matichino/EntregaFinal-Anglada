@@ -6,6 +6,11 @@ class Cliente(models.Model):
     contraseña= models.CharField(max_length=8)
     numero_de_caso= models.IntegerField()
 
+    
+    def __str__(self):
+            return "{} | ID: {}" .format (self.usuario, self.id)
+    
+
 class Yasoycliente(models.Model):
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=20)

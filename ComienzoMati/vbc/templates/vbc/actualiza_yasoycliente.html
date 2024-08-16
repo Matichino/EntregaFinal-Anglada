@@ -1,0 +1,20 @@
+{% extends "AppJuridica/base.html" %}
+
+{% load static %}
+
+{% block title %}Actualizar Cliente{% endblock title %}
+
+{% block main %}
+    <h1 style="margin-bottom: 60px;">Actualizar Cliente</h1>   
+    
+    
+    <!-- Muestra el formulario de actualización -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Actualizar</button>
+    </form>
+
+    <!-- Enlace para regresar a la lista de clientes -->
+    <a href="{% url 'ListaYasoycliente' %}">Volver a la lista de clientes</a>
+{% endblock main %}
