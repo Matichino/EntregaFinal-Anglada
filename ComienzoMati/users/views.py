@@ -13,8 +13,9 @@ def login_request(request):
             user = authenticate(username=usuario, password=contrasenia)
             if user is not None:
                 login(request, user)
-                return redirect('index')  # Cambia 'index' por la vista a la que quieras redirigir
+                return render(request, "AppJuridica/index.html")  # Cambia 'index' por la vista a la que quieras redirigir
         msg_login = "Usuario o contraseña incorrectos"
+
     form = AuthenticationForm()
     return render(request, "users/login.html", {"form": form, "msg_login": msg_login})
 

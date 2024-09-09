@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from AppJuridica.models import Cliente
 from AppJuridica.forms import ClienteFormulario
 from .models import Yasoycliente
 from .forms import YasoyclienteForm
 from .forms import DatosdecontactoForm
 from .forms import BuscarNumeroCasoForm
+from django.views.generic import FormView
 
 def inicio(request):
     return render (request, "AppJuridica/index.html")
@@ -74,7 +77,7 @@ def pagina_exito(request):
 
 
 # Vista para buscar
-
+@login_required
 def buscar_numero_caso(request):
     resultado = None
     form = BuscarNumeroCasoForm()
@@ -90,3 +93,22 @@ def buscar_numero_caso(request):
 
     return render(request, 'AppJuridica/buscar_numero_caso.html', {'form': form, 'resultado': resultado})
 
+
+class BuscarNumeroCasoView(LoginRequiredMixin, FormView):
+    template_name = 'AppJuridica/buscar_numero_caso.html'
+    form_class = BuscarNumeroCasoForm
+
+    def form_valid(self, form):
+        numero_de_caso = form.cleaned_data['numero_de_caso']
+        try:
+            resultado = Cliente.objects.get(numero_de_caso=numero_de_caso)
+        except Cliente.DoesNotExist:
+            resultado = None
+
+        # Pasa el resultado al contexto
+        context = self.get_context_data()
+        context['resultado'] = resultado
+        return self.render_to_response(context)
+
+def about (request):
+    return render (request, "AppJuridica/about.html")
