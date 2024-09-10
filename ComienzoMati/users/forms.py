@@ -14,7 +14,8 @@ class UserEditForm(UserChangeForm):
     first_name = forms.CharField(label='Nombre:', max_length=30, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(label='Apellido:', max_length=30, widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(label="Ingrese su email:", widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    imagen = forms.ImageField (label="Avatar", required= False )
 
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "email"]
+        fields = ["first_name", "last_name", "email", "imagen"]

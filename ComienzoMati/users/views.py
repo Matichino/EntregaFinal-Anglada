@@ -7,6 +7,7 @@ from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
+from users.models import Avatar
 
 def login_request(request):
     msg_login = ""
@@ -41,8 +42,15 @@ def editar_usuario(request):
     usuario = request.user
 
     if request.method == 'POST':
-        formulario = UserEditForm(request.POST, instance=usuario)
+        formulario = UserEditForm(request.POST, request.FILES, instance=usuario)
         if formulario.is_valid():
+
+            if formulario.is_valid():
+                if formulario.cleaned_data.get ("imagen"):
+                    avatar = Avatar (user= usuario, imagen = formulario.cleaned_data.get ("imagen"))
+                    #usuario.avatar.imagen = formulario.cleaned_data.get ("imagen")
+                    avatar.save ()
+
             formulario.save()
             return redirect('Login')  # Redirige a una vista después de guardar
     else:

@@ -38,15 +38,16 @@
         <li><a href="{% url 'buscar_numero_caso' %}">Buscar Número de Caso</a></li>
 
         {% if user.is_authenticated %}
-            <!-- Mostrar el nombre del usuario cuando está autenticado -->
+		    <!-- Mostrar el nombre del usuario cuando está autenticado -->
             <li><a href="#" class="btn btn-learn">Hola de vuelta!, {{ user.username }}</a></li>
+			<img src="{{request.user.avatar.imagen.url}}" alt= "" height= "40px"/>
             <!-- Botón para editar usuario visible solo para usuarios autenticados -->
             <a href="{% url 'EditarUsuario' %}" class="btn btn-learn">Editar Usuario</a>
             <a href="{% url 'Logout' %}" class="btn btn-learn">Logout</a>
 
             {% if user.is_superuser %}
                 <!-- Botones específicos para superusuarios -->
-                <li><a href="{% url 'listausuarios' %}">Listado Clientes</a></li>
+                <li><a href="{% url 'listausuarios' %}">Usuarios Registrados</a></li>
                 <!-- Otros botones que solo los superusuarios deben ver -->
             {% endif %}
         {% else %}
