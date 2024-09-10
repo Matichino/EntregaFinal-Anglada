@@ -25,36 +25,37 @@
 			</div>
 
 			<!-- main nav -->
-			<nav class="collapse navbar-collapse navbar-right" role="navigation">
-				<ul id="nav" class="nav navbar-nav menu">
-					<li><a href="#top">Inicio</a></li>
-					<li><a href="#features">Servicios Juridicos</a></li>
-					<li><a href="#portfolio">Servicios de Ciberseguridad</a></li>
-					<li><a href="#team">Sobre Nosotros</a></li>
-					<li><a href="#pricing-table">Precios</a></li>
-					<li><a href="#blog">Noticias Recientes</a></li>
-					<li><a href="#testimonial">Casos Resueltos</a></li>
-					<li><a href="#contact-form">Contacto</a></li>
-					<li><a href="{% url 'buscar_numero_caso' %}">Buscar Número de Caso</a></li>
-					<a href="{% url 'Login' %}" class="btn btn-learn">Login</a>
-					<a href="{% url 'Register' %}" class="btn btn-learn">Registro</a>
-					<a href="{% url 'Logout' %}" class="btn btn-learn">Logout</a>
+<nav class="collapse navbar-collapse navbar-right" role="navigation">
+    <ul id="nav" class="nav navbar-nav menu">
+        <li><a href="#top">Inicio</a></li>
+        <li><a href="#features">Servicios Juridicos</a></li>
+        <li><a href="#portfolio">Servicios de Ciberseguridad</a></li>
+        <li><a href="#team">Sobre Nosotros</a></li>
+        <li><a href="#pricing-table">Precios</a></li>
+        <li><a href="#blog">Noticias Recientes</a></li>
+        <li><a href="#testimonial">Casos Resueltos</a></li>
+        <li><a href="#contact-form">Contacto</a></li>
+        <li><a href="{% url 'buscar_numero_caso' %}">Buscar Número de Caso</a></li>
 
-				{% if user.is_authenticated %}
-					<!-- Botón para editar usuario visible solo para usuarios autenticados -->
-					<a href="{% url 'EditarUsuario' %}" class="btn btn-learn">Editar Usuario</a>
-				{% endif %}
+        {% if user.is_authenticated %}
+            <!-- Mostrar el nombre del usuario cuando está autenticado -->
+            <li><a href="#" class="btn btn-learn">Hola de vuelta!, {{ user.username }}</a></li>
+            <!-- Botón para editar usuario visible solo para usuarios autenticados -->
+            <a href="{% url 'EditarUsuario' %}" class="btn btn-learn">Editar Usuario</a>
+            <a href="{% url 'Logout' %}" class="btn btn-learn">Logout</a>
 
-				{% if user.is_superuser %}
-                    <!-- Botones específicos para superusuarios -->
-                    <li><a href="{% url 'cliente_listar' %}">Listado Clientes</a></li>
-                    <!-- Otros botones que solo los superusuarios deben ver -->
-                {% endif %}
-
-
-
-				</ul>
-			</nav>
+            {% if user.is_superuser %}
+                <!-- Botones específicos para superusuarios -->
+                <li><a href="{% url 'listausuarios' %}">Listado Clientes</a></li>
+                <!-- Otros botones que solo los superusuarios deben ver -->
+            {% endif %}
+        {% else %}
+            <!-- Mostrar botones de login y registro cuando no está autenticado -->
+            <a href="{% url 'Login' %}" class="btn btn-learn">Login</a>
+            <a href="{% url 'Register' %}" class="btn btn-learn">Registro</a>
+        {% endif %}
+    </ul>
+</nav>
 			<!-- /main nav -->
 
 		</div>

@@ -1,0 +1,15 @@
+{% extends "AppJuridica/base.html" %}
+
+{% block main %}
+    <h1 style="margin-bottom: 70px;">Lista de Usuarios Registrados</h1>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>
+                {{ usuario.username }} - {{ usuario.email }}
+                <a href="{% url 'editar_usuario' pk=usuario.pk %}">Editar</a>
+            </li>
+        {% empty %}
+            <li>No hay usuarios registrados.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
