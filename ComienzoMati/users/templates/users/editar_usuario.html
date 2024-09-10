@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4; /* Fondo gris claro para el body */
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .card-header {
+            background-color: #28a745; /* Verde claro */
+            color: white;
+            border-bottom: 1px solid #ddd;
+        }
+        .btn-success {
+            background-color: #28a745; /* Verde claro */
+            border-color: #28a745;
+        }
+        .btn-success:hover {
+            background-color: #218838; /* Verde más oscuro */
+            border-color: #1e7e34;
+        }
+        .btn-secondary {
+            background-color: #6c757d; /* Gris para el botón de redirección */
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center text-dark">Editar perfil de {{ request.user.username }}</h1>
+
+        <div class="d-flex justify-content-center">
+            <div class="card shadow-lg" style="width: 100%; max-width: 600px;">
+                <div class="card-header">
+                    <h4 class="mb-0">Actualiza tus datos</h4>
+                </div>
+                <div class="card-body bg-white">
+                    <form action="" method="POST">
+                        <!-- CSRF Token para seguridad -->
+                        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+                        <!-- Campos del Formulario -->
+                        <div class="form-group">
+                            <label for="id_first_name">Nombre:</label>
+                            <input type="text" id="id_first_name" name="first_name" class="form-control" value="{{ form.first_name.value }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_last_name">Apellido:</label>
+                            <input type="text" id="id_last_name" name="last_name" class="form-control" value="{{ form.last_name.value }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_email">Email:</label>
+                            <input type="email" id="id_email" name="email" class="form-control" value="{{ form.email.value }}">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg mt-3">Actualizar</button>
+
+                        <!-- Nuevo botón de redirección -->
+                        <a href="{% url 'CambiarPass' %}" class="btn btn-secondary btn-lg mt-3 ml-2">Cambiar Contraseña</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

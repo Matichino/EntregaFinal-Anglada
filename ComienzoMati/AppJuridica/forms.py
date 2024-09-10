@@ -1,7 +1,7 @@
 from django import forms
 from .models import Yasoycliente
 from .models import Datosdecontacto
-
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 
 class ClienteFormulario(forms.Form):
@@ -34,5 +34,4 @@ class DatosdecontactoForm(forms.ModelForm):
 
 class BuscarNumeroCasoForm(forms.Form):
     numero_de_caso = forms.IntegerField(label='Número de Caso', widget=forms.NumberInput(attrs={'class': 'form-control'}))
-
 

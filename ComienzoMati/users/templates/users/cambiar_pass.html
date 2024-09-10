@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'AppJuridica/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'AppJuridica/css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Cambiar Contraseña</h1>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <form method="post" class="bg-light p-4 border rounded">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success mt-3">Actualizar Contraseña</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

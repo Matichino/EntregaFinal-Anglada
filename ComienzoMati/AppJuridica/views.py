@@ -9,6 +9,7 @@ from .forms import DatosdecontactoForm
 from .forms import BuscarNumeroCasoForm
 from django.views.generic import FormView
 
+
 def inicio(request):
     return render (request, "AppJuridica/index.html")
 
@@ -112,3 +113,4 @@ class BuscarNumeroCasoView(LoginRequiredMixin, FormView):
 
 def about (request):
     return render (request, "AppJuridica/about.html")
+

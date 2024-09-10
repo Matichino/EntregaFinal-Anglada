@@ -17,6 +17,7 @@ Formularios = [
     path('crear-datos-contacto/', views.crear_datos_contacto, name='crear_datos_contacto'),
     path('pagina_exito/', views.pagina_exito, name='pagina_exito'), 
     path('buscar-numero-caso/', views.buscar_numero_caso, name='buscar_numero_caso'),
+    
         
 
 ]

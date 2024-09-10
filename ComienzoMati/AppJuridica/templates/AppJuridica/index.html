@@ -39,6 +39,20 @@
 					<a href="{% url 'Login' %}" class="btn btn-learn">Login</a>
 					<a href="{% url 'Register' %}" class="btn btn-learn">Registro</a>
 					<a href="{% url 'Logout' %}" class="btn btn-learn">Logout</a>
+
+				{% if user.is_authenticated %}
+					<!-- Botón para editar usuario visible solo para usuarios autenticados -->
+					<a href="{% url 'EditarUsuario' %}" class="btn btn-learn">Editar Usuario</a>
+				{% endif %}
+
+				{% if user.is_superuser %}
+                    <!-- Botones específicos para superusuarios -->
+                    <li><a href="{% url 'cliente_listar' %}">Listado Clientes</a></li>
+                    <!-- Otros botones que solo los superusuarios deben ver -->
+                {% endif %}
+
+
+
 				</ul>
 			</nav>
 			<!-- /main nav -->
@@ -56,10 +70,8 @@
 							<h1>Servicios Juridicos y Ciberseguridad</h1>
 							<h2>En el complejo panorama legal actual, la defensa efectiva en casos civiles, laborales y de ciberseguridad es fundamental para proteger los derechos y intereses de individuos y organizaciones. En nuestra práctica, nos especializamos en ofrecer asesoría experta y representación comprometida en cada una de estas áreas. Y nos comprometemos a defender sus intereses con la máxima diligencia y profesionalismo.</h2>
 							<div class="buttons">
-								<a href="{% url 'Form-Con-Api' %}" class="btn btn-learn">Quiero Ser cliente (registrarme)</a>
-								<a href="{% url 'editar_cliente' pk=1 %}" class="btn btn-learn">Ya soy Cliente (ver mi caso)</a>
 								<a href="{% url 'crear_datos_contacto' %}" class="btn btn-learn">Contactame Ahora</a>
-								<a href="{% url 'buscar_numero_caso' %}" class="btn btn-learn">Busqueda Juicio (Seguimiento)</a>
+								
 							</div>
 						</div>
 					</div>
