@@ -33,12 +33,12 @@
         <li><a href="#team">Sobre Nosotros</a></li>
         <li><a href="#pricing-table">Precios</a></li>
         <li><a href="#blog">Noticias Recientes</a></li>
-        <li><a href="#testimonial">Casos Resueltos</a></li>
+        <li><a href="#testimonial">About</a></li>
         <li><a href="#contact-form">Contacto</a></li>
         <li><a href="{% url 'buscar_numero_caso' %}">Buscar Número de Caso</a></li>
 
         {% if user.is_authenticated %}
-		    <!-- Mostrar el nombre del usuario cuando está autenticado -->
+		<!-- Mostrar el nombre del usuario cuando está autenticado -->
             <li><a href="#" class="btn btn-learn">Hola de vuelta!, {{ user.username }}</a></li>
 			<img src="{{request.user.avatar.imagen.url}}" alt= "" height= "40px"/>
             <!-- Botón para editar usuario visible solo para usuarios autenticados -->
@@ -53,7 +53,7 @@
         {% else %}
             <!-- Mostrar botones de login y registro cuando no está autenticado -->
             <a href="{% url 'Login' %}" class="btn btn-learn">Login</a>
-            <a href="{% url 'Register' %}" class="btn btn-learn">Registro</a>
+            <a href="{% url 'Register' %}" class="btn btn-learn">Registro con un click!</a>
         {% endif %}
     </ul>
 </nav>
@@ -101,8 +101,7 @@
 								<i class="ion-easel"></i>
 							</div>
 							<h4 class="wow fadeInUp" data-wow-delay=".3s">Civil</h4>
-							<p class="wow fadeInUp" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipisic-<br>ing
-								elit, sed do eiusmod tempor incididunt ut <br> labore et dolore magna aliqua. Ut enim ad minim</p>
+							<p class="wow fadeInUp" data-wow-delay=".5s">regula las relaciones privadas entre individuos, abordando temas como contratos, propiedad, familia y sucesiones,  <br> lbuscando resolver disputas y establecer normas de conducta en la vida cotidiana</p>
 						</div>
 					</div>
 					<div class="col-md-4 col-xs-6 col-sm-6">
@@ -111,8 +110,7 @@
 								<i class="ion-paintbucket"></i>
 							</div>
 							<h4 class="wow fadeInUp" data-wow-delay=".3s">Laboral</h4>
-							<p class="wow fadeInUp" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipisic-<br>ing
-								elit, sed do eiusmod tempor incididunt ut <br> labore et dolore magna aliqua. Ut enim ad minim</p>
+							<p class="wow fadeInUp" data-wow-delay=".5s">se enfoca en las relaciones entre empleadores y empleados, <br>estableciendo normas para los contratos de trabajo, condiciones laborales, s<br> derechos de los trabajadores y resolución de conflictos laborale</p>
 						</div>
 					</div>
 					<div class="col-md-4 col-xs-6 col-sm-6">
@@ -121,8 +119,7 @@
 								<i class="ion-paintbrush"></i>
 							</div>
 							<h4 class="wow fadeInUp" data-wow-delay=".3s">Corporativa</h4>
-							<p class="wow fadeInUp" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipisic-<br>ing
-								elit, sed do eiusmod tempor incididunt ut <br> labore et dolore magna aliqua. Ut enim ad minim</p>
+							<p class="wow fadeInUp" data-wow-delay=".5s">trata sobre la formación, gestión y disolución de empresas y organizaciones, <br>abarcando aspectos como la estructura corporativa, las fusiones y adquisiciones, y la responsabilidad de los directivos, <br> con el objetivo de garantizar un funcionamiento legal y eficiente de las entidades comerciales</p>
 						</div>
 					</div>
 				</div>
@@ -285,8 +282,7 @@
 							<div class="team-overlay">
 								<h3>Laureano <span>Ingeniero en Sistemas</span></h3>
 								<span class="icon"><i class="ion-quote"></i></span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-									et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+								<p></p>
 							</div>
 						</div>
 					</div>
@@ -296,8 +292,7 @@
 							<div class="team-overlay">
 								<h3>Leopoldo <span>Abogado Civil</span></h3>
 								<span class="icon"><i class="ion-quote"></i></span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-									et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+								<p></p>
 							</div>
 						</div>
 					</div>
@@ -307,8 +302,7 @@
 							<div class="team-overlay">
 								<h3>Matias <span>Abogado Laboral</span></h3>
 								<span class="icon"><i class="ion-quote"></i></span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-									et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+								<p></p>
 							</div>
 						</div>
 					</div>
@@ -326,29 +320,10 @@
 						<div class="block text-center wow fadeInLeft" data-wow-delay=".3s">
 							<ul>
 								<li>
-									<h4>STARTER PACK</h4>
-									<p>&#36; 40 <span>/Month</span></p>
-								</li>
-								<li>
-									<p>Unlimited Downloads</p>
-								</li>
-								<li>
-									<p>Unlimited Uploads</p>
-								</li>
-								<li>
-									<p>Unlimited Email Accounts</p>
-								</li>
-								<li>
-									<p> Email Forwards </p>
-								</li>
-								<li>
-									<p>Cloud Storage</p>
-								</li>
-								<li>
-									<p>Screen Share</p>
-								</li>
-								<li>
-									<a href="#" class="btn btn-buy">BUY NOW</a>
+									<h4>consulta minima</h4>
+									<p>&#36; 2 ius, consultar web colegio de abogados<span></span></p>
+								
+									<a href="#" class="btn btn-buy">Contactenos</a>
 								</li>
 							</ul>
 						</div>
@@ -357,29 +332,10 @@
 						<div class="block text-center wow zoomIn" data-wow-delay=".3s">
 							<ul>
 								<li>
-									<h4>STARTER PACK</h4>
-									<p>&#36; 40 <span>/Month</span></p>
-								</li>
-								<li>
-									<p>Unlimited Downloads</p>
-								</li>
-								<li>
-									<p>Unlimited Uploads</p>
-								</li>
-								<li>
-									<p>Unlimited Email Accounts</p>
-								</li>
-								<li>
-									<p> Email Forwards </p>
-								</li>
-								<li>
-									<p>Cloud Storage</p>
-								</li>
-								<li>
-									<p>Screen Share</p>
-								</li>
-								<li>
-									<a href="#" class="btn btn-buy">BUY NOW</a>
+									<h4>Juicio Civil</h4>
+									<p>&#36; 30 ius <span></span></p>
+								
+									<a href="#" class="btn btn-buy">Contactenos</a>
 								</li>
 							</ul>
 						</div>
@@ -388,29 +344,10 @@
 						<div class="block text-center wow fadeInRight" data-wow-delay=".3s">
 							<ul>
 								<li>
-									<h4>STARTER PACK</h4>
-									<p>&#36; 40 <span>/Month</span></p>
-								</li>
-								<li>
-									<p>Unlimited Downloads</p>
-								</li>
-								<li>
-									<p>Unlimited Uploads</p>
-								</li>
-								<li>
-									<p>Unlimited Email Accounts</p>
-								</li>
-								<li>
-									<p> Email Forwards </p>
-								</li>
-								<li>
-									<p>Cloud Storage</p>
-								</li>
-								<li>
-									<p>Screen Share</p>
-								</li>
-								<li>
-									<a href="#" class="btn btn-buy">BUY NOW</a>
+									<h4>Juicio Corporativo</h4>
+									<p>&#36; Depende valor del litigio <span></span></p>
+								
+									<a href="#" class="btn btn-buy">Contactenos</a>
 								</li>
 							</ul>
 						</div>
@@ -518,8 +455,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="title">
-						<h2>Casos Resueltos</h2>
-						<p>Conocenos a traves de nuestros clientes <br> que han elegido nuestros servicios en el pasado dandoles soluciones reales</p>
+						<h2>About</h2>
+						<p>Conoceme a traves de mi proyecto <br> y lo que aspiro llegar para seguir perfeccionandome en el mundo de la programacion</p>
 					</div>
 					<div class="col col-md-6">
 						<div class="media wow fadeInLeft" data-wow-delay=".3s">
@@ -530,11 +467,9 @@
 							</div>
 							<div class="media-body">
 								<a href="#">
-									<h4 class="media-heading">Jonathon Andrew</h4>
+									<h4 class="media-heading">Matias</h4>
 								</a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-									et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-									aliquip ex ea commo</p>
+								<p>Planeo con python iniciarme en el mundo de la programacion, he estado muy aburrido en la abogacia</p>
 							</div>
 						</div>
 					</div>
@@ -547,11 +482,9 @@
 							</div>
 							<div class="media-body">
 								<a href="#">
-									<h4 class="media-heading">Jonathon Andrew</h4>
+									<h4 class="media-heading">Gabriel</h4>
 								</a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-									et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-									aliquip ex ea commo</p>
+								<p>No solamente busco beneficio personal sino tambien economico para abrirme al mundo de la tecnologia</p>
 							</div>
 						</div>
 					</div>
@@ -564,11 +497,9 @@
 							</div>
 							<div class="media-body">
 								<a href="#">
-									<h4 class="media-heading">Jonathon Andrew</h4>
+									<h4 class="media-heading">Anglada</h4>
 								</a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-									et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-									aliquip ex ea commo</p>
+								<p>Soy autodidacta y intento ir siempre un poco mas de lo que me proponen</p>
 							</div>
 						</div>
 					</div>
@@ -581,11 +512,9 @@
 							</div>
 							<div class="media-body">
 								<a href="#">
-									<h4 class="media-heading">Jonathon Andrew</h4>
+									<h4 class="media-heading">Rossi</h4>
 								</a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-									et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-									aliquip ex ea commo</p>
+								<p>Este proyecto esta enfocado a hacerlo crecer a medida que mis habilidades crezcan para ello, porque no hay nada parecido en el mercado argentino de este tipo de paginas </p>
 							</div>
 						</div>
 					</div>
@@ -645,7 +574,7 @@
 				<div class="row">
 					<div class="title">
 						<h2>Contacto</h2>
-						<p>Dantes remained confused and silent by this explanation of the <br> thoughts which had unconsciously</p>
+						<p>No te preocupes no compartiremos tu informacion personal, ya que preservamos la confidencialidad de abogado y cliente </p>
 					</div>
 					<div class="col-md-6 col">
 						<!-- map -->
@@ -666,18 +595,7 @@
 				</div>
 			</div>
 		</section>
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="block">
-							<a href="#"><img src="{% static 'AppJuridica\img\logo.png'%} " alt=""></a>
-							<p>All rights reserved © 2024</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+		
 	</div>
 
 	<!-- load Js -->

@@ -2,9 +2,10 @@
 
 {% load static %}
 
+{% block title %}Formulario de Cliente{% endblock title %}
 
 {% block main  %}
-<h1 style="margin-bottom: 60px;">Crear Datos de Contacto</h1>    
+<h1 style="margin-bottom: 100px;">Crear Datos de Contacto</h1>    
 
     <form method="post">
         {% csrf_token %}
