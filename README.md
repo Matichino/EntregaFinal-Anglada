@@ -1,5 +1,6 @@
 ﻿
 Resumen de Funcionalidad de la Página de Inicio (URLS MEJORADAS EN TODO SENTIDO, EL USUARIO TIENE ACCESO A LA NAVEGACION Y SOLAMENTE EL ADMIN QUE ES TEST PUEDE CAMBIAR TODA LA INFORMACION DE LOS USUARIOS QUE HAY EN LA WEB UPDATE SEPTIEMBRE)
+LINK FUNCIONALIDAD youtube https://youtu.be/rdd5tZM8zb8
 
 En mi aplicación web, la página de inicio está diseñada para ofrecer a los usuarios una serie de funcionalidades clave mediante varios botones de navegación. A continuación, detallo cada una de estas funcionalidades y cómo están implementadas:
 
